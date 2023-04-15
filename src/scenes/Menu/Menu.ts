@@ -40,8 +40,12 @@ export default class Menu extends Phaser.Scene {
 		const bouton = new Bouton(this, 960, 505);
 		this.add.existing(bouton);
 
+		this.bouton = bouton;
+
 		this.events.emit("scene-awake");
 	}
+
+	public bouton!: Bouton;
 
 	/* START-USER-CODE */
 
@@ -50,6 +54,9 @@ export default class Menu extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+		this.bouton
+			.setInteractive({ cursor: 'pointer' })
+			.on('pointerdown', () => this.scene.start('Level'));
 	}
 
 	/* END-USER-CODE */

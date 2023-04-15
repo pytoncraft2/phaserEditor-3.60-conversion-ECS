@@ -15,7 +15,12 @@ export default class Bouton extends Phaser.GameObjects.Text {
 		this.setPadding({"left":150,"top":30,"right":150,"bottom":30});
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
+		this.on('pointerover', function (this: Phaser.GameObjects.Text) {
+			this.setBackgroundColor("#005F95");
+		});
+		this.on('pointerout', function (this: Phaser.GameObjects.Text) {
+			this.setBackgroundColor("#006699");
+		});
 		/* END-USER-CTR-CODE */
 	}
 

@@ -65,6 +65,7 @@
                 "y"
             ],
             "label": "bouton",
+            "scope": "PUBLIC",
             "components": [],
             "x": 960,
             "y": 505

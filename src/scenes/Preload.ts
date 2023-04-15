@@ -1,4 +1,3 @@
-
 // You can write more code here
 import * as Phaser from "phaser";
 import PreloadText from "../components/PreloadText";
@@ -17,16 +16,11 @@ export default class Preload extends Phaser.Scene {
 
 	editorCreate(): void {
 
-		// guapen
-		const guapen = this.add.image(400, 219, "guapen");
-		guapen.scaleX = 0.5915891440784282;
-		guapen.scaleY = 0.5915891440784282;
-
 		// progress
-		const progress = this.add.text(400, 349, "", {});
+		const progress = this.add.text(960, 540, "", {});
 		progress.setOrigin(0.5, 0.5);
 		progress.text = "0%";
-		progress.setStyle({ "fontSize": "30px" });
+		progress.setStyle({ "color": "#006699", "fontFamily": "Open Sans", "fontSize": "55px" });
 
 		// progress (components)
 		new PreloadText(progress);
