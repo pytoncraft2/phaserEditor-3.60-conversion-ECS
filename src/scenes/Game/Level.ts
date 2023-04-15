@@ -66,10 +66,6 @@ export default class Level extends Phaser.Scene {
 		const player = new Player(this, 399, 280);
 		this.add.existing(player);
 
-		// bullet
-		const bullet = new Bullet(this, 496, 186);
-		this.add.existing(bullet);
-
 		// platformes
 		const platformes = this.add.layer();
 

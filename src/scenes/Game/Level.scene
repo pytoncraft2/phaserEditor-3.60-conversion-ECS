@@ -39,20 +39,6 @@
             "y": 280
         },
         {
-            "prefabId": "98a93c74-91ee-4013-9ac3-55767f056d40",
-            "id": "793fe38b-93c4-4c71-9835-f4bc5bbca1ec",
-            "unlock": [
-                "x",
-                "y"
-            ],
-            "label": "bullet",
-            "components": [],
-            "x": 496,
-            "y": 186,
-            "nestedPrefabs": [],
-            "list": []
-        },
-        {
             "type": "Layer",
             "id": "e9d6ab7a-3e40-4d34-8622-179c2916c17a",
             "label": "platformes",
