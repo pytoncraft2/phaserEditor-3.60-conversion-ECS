@@ -1,13 +1,44 @@
 
 // You can write more code here
-import { createWorld, IWorld, pipe } from "bitecs";
-import { createMatterPhysicsSystem, createMatterSpriteSystem, createMatterStaticSpriteSystem } from "../../systems/Matter";
-import { createPlayerSystem } from "../../systems/PlayerSystem";
-import { createSteeringSystem } from "../../systems/SteerSystem";
-import { TextureKeys } from "../../types/texture";
-import * as Phaser from "phaser";
-import Player from "../../prefabs/Player";
-import Bullet from "../../prefabs/Bullet";
+// import { createWorld, IWorld, pipe } from "bitecs";
+// import { createMatterPhysicsSystem, createMatterSpriteSystem, createMatterStaticSpriteSystem } from "../../systems/Matter";
+// import { createPlayerSystem } from "../../systems/PlayerSystem";
+// import { createSteeringSystem } from "../../systems/SteerSystem";
+// import { TextureKeys } from "../../types/texture";
+// import * as Phaser from "phaser";
+// import Player from "../../prefabs/Player";
+// import Bullet from "../../prefabs/Bullet";
+
+
+
+
+
+import * as Phaser from 'phaser'
+import {
+	createWorld,
+	addEntity,
+	addComponent,
+	pipe,
+} from 'bitecs'
+
+import type {
+	IWorld,
+	System
+} from 'bitecs'
+
+import { Position } from '../../ecs-comps/Position'
+import { Velocity } from '../../ecs-comps/Velocity'
+import { Rotation } from '../../ecs-comps/Rotation'
+import { Player } from '../../ecs-comps/Player'
+import CPU from '../../ecs-comps/CPU'
+import { Input } from '../../ecs-comps/Input'
+
+import createMovementSystem from '../../systems/movement'
+import createPlayerSystem from '../../systems/player'
+import createCPUSystem from '../../systems/cpu'
+import { createArcadeSpriteStaticSystem, createArcadeSpriteSystem } from '../../systems/sprite'
+import { ArcadeSprite, ArcadeSpriteStatic } from '../../ecs-comps/ArcadeSprite'
+import Alpha from '../../ecs-comps/Alpha'
 /* START OF COMPILED CODE */
 
 export default class Level extends Phaser.Scene {
@@ -62,21 +93,6 @@ export default class Level extends Phaser.Scene {
 	init()
 	{
 		this.cursors = this.input.keyboard.createCursorKeys()
-
-		const onAfterUpdate = () => {
-			if (!this.afterPhysicsPipeline || !this.world)
-			{
-				return
-			}
-
-			this.afterPhysicsPipeline(this.world)
-		}
-
-		this.matter.world.on(Phaser.Physics.Matter.Events.AFTER_UPDATE, onAfterUpdate)
-
-		this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
-			this.matter.world.off(Phaser.Physics.Matter.Events.AFTER_UPDATE, onAfterUpdate)
-		})
 
 	}
 
