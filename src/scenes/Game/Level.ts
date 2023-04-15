@@ -1,7 +1,7 @@
 
 // You can write more code here
 import { createWorld, IWorld, pipe } from "bitecs";
-import { createMatterPhysicsSyncSystem, createMatterPhysicsSystem, createMatterSpriteSystem, createMatterStaticSpriteSystem, createMatterStaticGameObjectSystem } from "../../systems/Matter";
+import { createMatterPhysicsSystem, createMatterSpriteSystem, createMatterStaticSpriteSystem } from "../../systems/Matter";
 import { createPlayerSystem } from "../../systems/PlayerSystem";
 import { createSteeringSystem } from "../../systems/SteerSystem";
 import { TextureKeys } from "../../types/texture";
@@ -96,17 +96,16 @@ export default class Level extends Phaser.Scene {
 
 		// create MatterSpriteSystem
 		this.pipeline = pipe(
-			createMatterSpriteSystem(this.matter, TextureKeys),
-			createMatterStaticSpriteSystem(),
-			createMatterStaticGameObjectSystem(this.matter, [this.platformes.list[0]]),
-			createPlayerSystem(this.cursors),
-			createSteeringSystem(5),
-			createMatterPhysicsSystem()
+			// createMatterSpriteSystem(this.matter, TextureKeys),
+			// createMatterStaticSpriteSystem(),
+			// createPlayerSystem(this.cursors),
+			// createSteeringSystem(5),
+			// createMatterPhysicsSystem()
 		)
 
-		this.afterPhysicsPipeline = pipe(
-			createMatterPhysicsSyncSystem()
-		)
+		// this.afterPhysicsPipeline = pipe(
+			// createMatterPhysicsSyncSystem()
+		// )
 
 	}
 

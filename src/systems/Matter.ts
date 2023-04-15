@@ -41,30 +41,30 @@ export function createMatterSpriteSystem(matter: Phaser.Physics.Matter.MatterPhy
 	})
 }
 
-export function createMatterPhysicsSyncSystem() {
-	// create query
-	const query = defineQuery([Position, MatterSprite])
+// export function createMatterPhysicsSyncSystem() {
+// 	// create query
+// 	const query = defineQuery([Position, MatterSprite])
 
-	return defineSystem(world => {
-		// sync simulated values back into components
-		const entities = query(world)
-		for (let i = 0; i < entities.length; ++i)
-		{
-			const id = entities[i]
-			const sprite = matterSpritesById.get(id)
+// 	return defineSystem(world => {
+// 		// sync simulated values back into components
+// 		const entities = query(world)
+// 		for (let i = 0; i < entities.length; ++i)
+// 		{
+// 			const id = entities[i]
+// 			const sprite = matterSpritesById.get(id)
 
-			if (!sprite)
-			{
-				continue
-			}
+// 			if (!sprite)
+// 			{
+// 				continue
+// 			}
 
-			Position.x[id] = sprite.x
-			Position.y[id] = sprite.y
-		}
+// 			Position.x[id] = sprite.x
+// 			Position.y[id] = sprite.y
+// 		}
 
-		return world
-	})
-}
+// 		return world
+// 	})
+// }
 
 export function createMatterPhysicsSystem() {
 	// create query
