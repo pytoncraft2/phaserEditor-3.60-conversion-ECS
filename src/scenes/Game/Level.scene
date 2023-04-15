@@ -53,19 +53,27 @@
             "list": []
         },
         {
-            "type": "Rectangle",
-            "id": "3e3ede41-eff8-45d0-895e-28262ab2766c",
-            "label": "platforme",
+            "type": "Layer",
+            "id": "e9d6ab7a-3e40-4d34-8622-179c2916c17a",
+            "label": "platformes",
             "scope": "PUBLIC",
             "components": [],
-            "x": 459,
-            "y": 541,
-            "scaleX": 3.7680520591373106,
-            "scaleY": 0.21455732556873675,
-            "isFilled": true,
-            "fillColor": "#5d0404",
-            "width": 128,
-            "height": 128
+            "list": [
+                {
+                    "type": "Rectangle",
+                    "id": "3e3ede41-eff8-45d0-895e-28262ab2766c",
+                    "label": "platforme",
+                    "components": [],
+                    "x": 459,
+                    "y": 541,
+                    "scaleX": 3.7680520591373106,
+                    "scaleY": 0.21455732556873675,
+                    "isFilled": true,
+                    "fillColor": "#5d0404",
+                    "width": 128,
+                    "height": 128
+                }
+            ]
         }
     ],
     "plainObjects": [],

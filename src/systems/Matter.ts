@@ -7,8 +7,10 @@ import { MatterSprite, MatterStaticSprite } from '../ecs-comps/MatterSprite'
 import { Rotation } from '../ecs-comps/Rotation'
 import { Velocity } from '../ecs-comps/Velocity'
 import { Scale } from '../ecs-comps/Scale'
+import { MatterGameObject, MatterStaticGameObject } from '../ecs-comps/MatterGameObject'
 
 const matterSpritesById = new Map<number, Phaser.Physics.Matter.Sprite>()
+const matterGameObjectById = new Map<number, Phaser.GameObjects.GameObject>()
 
 export function createMatterSpriteSystem(matter: Phaser.Physics.Matter.MatterPhysics, textures: string[]) {
 	const query = defineQuery([Position, MatterSprite, Scale])
@@ -25,6 +27,7 @@ export function createMatterSpriteSystem(matter: Phaser.Physics.Matter.MatterPhy
 			const x = Position.x[id]
 			const y = Position.y[id]
 			const textureId = MatterSprite.texture[id]
+			
 			const scale = {
 				x: Scale.x[id],
 				y: Scale.y[id]
@@ -125,6 +128,36 @@ export function createMatterStaticSpriteSystem() {
 			sprite.setStatic(false)
 		}
 
+		return world
+	})
+}
+
+export function createMatterStaticGameObjectSystem(matter: Phaser.Physics.Matter.MatterPhysics, gameObject: Phaser.GameObjects.GameObject[]) {
+	const query = defineQuery([Position, MatterGameObject, Scale])
+
+	// create enter and exit queries
+	const onQueryEnter = enterQuery(query)
+
+	return defineSystem(world => {
+		// create matter sprite on enter
+		const enterEntities = onQueryEnter(world)
+		for (let i = 0; i < enterEntities.length; ++i) {
+			const id = enterEntities[i]
+
+			const x = Position.x[id]
+			const y = Position.y[id]
+			const textureId = MatterGameObject.texture[id]
+			
+			const scale = {
+				x: Scale.x[id],
+				y: Scale.y[id]
+			}
+			// const sprite = matter.add.sprite(x, y, gameObject[textureId]).setScale(scale.x, scale.y)
+			const object = matter.add.gameObject(gameObject[textureId], { isStatic: true });
+
+			matterGameObjectById.set(id, object)
+		}
+		
 		return world
 	})
 }

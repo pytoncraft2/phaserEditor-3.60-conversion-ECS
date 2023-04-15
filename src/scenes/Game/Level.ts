@@ -1,7 +1,7 @@
 
 // You can write more code here
 import { createWorld, IWorld, pipe } from "bitecs";
-import { createMatterPhysicsSyncSystem, createMatterPhysicsSystem, createMatterSpriteSystem, createMatterStaticSpriteSystem } from "../../systems/Matter";
+import { createMatterPhysicsSyncSystem, createMatterPhysicsSystem, createMatterSpriteSystem, createMatterStaticSpriteSystem, createMatterStaticGameObjectSystem } from "../../systems/Matter";
 import { createPlayerSystem } from "../../systems/PlayerSystem";
 import { createSteeringSystem } from "../../systems/SteerSystem";
 import { TextureKeys } from "../../types/texture";
@@ -36,21 +36,25 @@ export default class Level extends Phaser.Scene {
 		const bullet = new Bullet(this, 496, 186);
 		this.add.existing(bullet);
 
+		// platformes
+		const platformes = this.add.layer();
+
 		// platforme
 		const platforme = this.add.rectangle(459, 541, 128, 128);
 		platforme.scaleX = 3.7680520591373106;
 		platforme.scaleY = 0.21455732556873675;
 		platforme.isFilled = true;
 		platforme.fillColor = 6095876;
+		platformes.add(platforme);
 
 		this.player = player;
-		this.platforme = platforme;
+		this.platformes = platformes;
 
 		this.events.emit("scene-awake");
 	}
 
 	private player!: Player;
-	public platforme!: Phaser.GameObjects.Rectangle;
+	public platformes!: Phaser.GameObjects.Layer;
 
 	/* START-USER-CODE */
 
@@ -94,6 +98,7 @@ export default class Level extends Phaser.Scene {
 		this.pipeline = pipe(
 			createMatterSpriteSystem(this.matter, TextureKeys),
 			createMatterStaticSpriteSystem(),
+			createMatterStaticGameObjectSystem(this.matter, [this.platformes.list[0]]),
 			createPlayerSystem(this.cursors),
 			createSteeringSystem(5),
 			createMatterPhysicsSystem()
