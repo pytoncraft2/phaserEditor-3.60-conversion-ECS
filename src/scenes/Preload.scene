@@ -2,8 +2,9 @@
     "id": "04331fb6-ed91-4d74-b6e9-4bfe0fcfb457",
     "sceneType": "SCENE",
     "settings": {
+        "snapWidth": 1920,
+        "snapHeight": 1080,
         "exportClass": true,
-        "autoImport": true,
         "preloadMethodName": "editorPreload",
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
@@ -33,6 +34,8 @@
             ],
             "x": 400,
             "y": 349,
+            "originX": 0.5,
+            "originY": 0.5,
             "text": "0%",
             "fontSize": "30px"
         }
@@ -42,6 +45,6 @@
         "app": "Phaser Editor 2D - Scene Editor",
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
-        "version": 2
+        "version": 3
     }
 }

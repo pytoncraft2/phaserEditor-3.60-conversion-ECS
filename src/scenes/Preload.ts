@@ -1,10 +1,9 @@
 
 // You can write more code here
-
-/* START OF COMPILED CODE */
-
 import * as Phaser from "phaser";
 import PreloadText from "../components/PreloadText";
+
+/* START OF COMPILED CODE */
 
 export default class Preload extends Phaser.Scene {
 
@@ -27,7 +26,7 @@ export default class Preload extends Phaser.Scene {
 		const progress = this.add.text(400, 349, "", {});
 		progress.setOrigin(0.5, 0.5);
 		progress.text = "0%";
-		progress.setStyle({"fontSize":"30px"});
+		progress.setStyle({ "fontSize": "30px" });
 
 		// progress (components)
 		new PreloadText(progress);

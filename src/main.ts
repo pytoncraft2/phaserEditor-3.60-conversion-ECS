@@ -21,9 +21,9 @@ class Boot extends Phaser.Scene {
 }
 
 const game = new Phaser.Game({
-    width: 800,
-    height: 600,
-    backgroundColor: "#2f2f2f",
+    width: 1920,
+    height: 1080,
+    backgroundColor: "#eee",
     physics: {
 		default: 'matter',
 		matter: {
@@ -32,8 +32,8 @@ const game = new Phaser.Game({
 		}
 	},
     scale: {
-        mode: Phaser.Scale.ScaleModes.FIT,
-        autoCenter: Phaser.Scale.Center.CENTER_BOTH
+        mode: Phaser.Scale.ENVELOP,
+        autoCenter: Phaser.Scale.CENTER_BOTH
     },
     scene: [Boot, Preload, Menu, Level]
 });
