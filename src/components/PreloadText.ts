@@ -2,6 +2,8 @@
 
 import UserComponent from "./UserComponent";
 import * as Phaser from "phaser";
+/* START-USER-IMPORTS */
+/* END-USER-IMPORTS */
 
 export default class PreloadText extends UserComponent {
 

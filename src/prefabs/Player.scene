@@ -26,17 +26,5 @@
         "url": "https://phasereditor2d.com",
         "contentType": "phasereditor2d.core.scene.SceneContentType",
         "version": 3
-    },
-    "prefabProperties": [
-        {
-            "name": "ecs-scale",
-            "label": "Property 1",
-            "tooltip": "Property 1",
-            "defValue": 1,
-            "customDefinition": false,
-            "type": {
-                "id": "number"
-            }
-        }
-    ]
+    }
 }
