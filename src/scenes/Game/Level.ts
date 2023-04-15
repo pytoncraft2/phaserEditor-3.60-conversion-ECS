@@ -27,21 +27,22 @@ import createCPUSystem from '../../systems/cpu'
 import { createArcadeSpriteStaticSystem, createArcadeSpriteSystem } from '../../systems/sprite'
 import { ArcadeSprite, ArcadeSpriteStatic } from '../../ecs-comps/ArcadeSprite'
 import Alpha from '../../ecs-comps/Alpha'
+import { TextureKeys } from '../../types/texture'
 
-enum Textures
-{
-	TankBlue = 0,
-	TankGreen = 1,
-	TankRed = 2,
-	Toile = 3
-}
+// enum Textures
+// {
+// 	TankBlue = 0,
+// 	TankGreen = 1,
+// 	TankRed = 2,
+// 	Toile = 3
+// }
 
-const TextureKeys = [
-	'tank-blue',
-	'tank-green',
-	'tank-red',
-	'toile'
-]
+// const TextureKeys = [
+// 	'tank-blue',
+// 	'tank-green',
+// 	'tank-red',
+// 	'toile'
+// ]
 /* START OF COMPILED CODE */
 
 export default class Level extends Phaser.Scene {
@@ -109,19 +110,26 @@ export default class Level extends Phaser.Scene {
 
 		this.initEnities()
 
+		const spriteGroup = this.physics.add.group()
+		const spriteStaticGroup = this.physics.add.staticGroup()
+
+		this.physics.add.collider(spriteGroup, spriteStaticGroup)
+		this.physics.add.collider(spriteGroup, spriteGroup)
 		// create MatterSpriteSystem
 		this.pipeline = pipe(
-			// createMatterSpriteSystem(this.matter, TextureKeys),
-			// createMatterStaticSpriteSystem(),
-			// createPlayerSystem(this.cursors),
-			// createSteeringSystem(5),
-			// createMatterPhysicsSystem()
+			createArcadeSpriteSystem(spriteGroup, TextureKeys),
+			createArcadeSpriteStaticSystem(spriteStaticGroup, TextureKeys),
+			createPlayerSystem(this.cursors),
+			createCPUSystem(this),
+			createMovementSystem()
 		)
 
 		// this.afterPhysicsPipeline = pipe(
 			// createMatterPhysicsSyncSystem()
 		// )
 
+
+		// create the systems
 	}
 
 	initEnities()

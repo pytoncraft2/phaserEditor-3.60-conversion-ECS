@@ -82,7 +82,7 @@ export default class TankBlue extends Phaser.GameObjects.Sprite {
 		// Scale.x[tank] = 1.2
 		// Scale.y[tank] = 1.2
 
-		console.log("CREATE ?");
+		console.log("CREATE ?", Textures);
 		
 
 	}

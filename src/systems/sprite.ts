@@ -48,7 +48,7 @@ export const createArcadeSpriteSystem = (group: Phaser.Physics.Arcade.Group, tex
 
 			sprite.setVelocity(Velocity.x[id], Velocity.y[id])
 			sprite.angle = Rotation.angle[id]
-			sprite.alpha = Alpha.alpha[id]
+			// sprite.alpha = Alpha.alpha[id]
 		}
 
 		const entitiesExited = spriteQueryExit(world)
