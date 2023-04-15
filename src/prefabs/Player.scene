@@ -1,0 +1,42 @@
+{
+    "id": "fae5d49d-c955-4560-8c43-53c1c0eb9a86",
+    "sceneType": "PREFAB",
+    "settings": {
+        "compilerEnabled": false,
+        "exportClass": true,
+        "preloadMethodName": "",
+        "preloadPackFiles": [],
+        "createMethodName": "",
+        "compilerOutputLanguage": "TYPE_SCRIPT"
+    },
+    "displayList": [
+        {
+            "type": "Image",
+            "id": "b45a927c-4c0f-4520-a04c-95c26e191be5",
+            "label": "tank_blue",
+            "components": [],
+            "texture": {
+                "key": "tank_blue"
+            }
+        }
+    ],
+    "plainObjects": [],
+    "meta": {
+        "app": "Phaser Editor 2D - Scene Editor",
+        "url": "https://phasereditor2d.com",
+        "contentType": "phasereditor2d.core.scene.SceneContentType",
+        "version": 3
+    },
+    "prefabProperties": [
+        {
+            "name": "ecs-scale",
+            "label": "Property 1",
+            "tooltip": "Property 1",
+            "defValue": 1,
+            "customDefinition": false,
+            "type": {
+                "id": "number"
+            }
+        }
+    ]
+}
