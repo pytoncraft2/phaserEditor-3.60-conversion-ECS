@@ -111,14 +111,14 @@ export default class Level extends Phaser.Scene {
 		this.initEnities()
 
 		const spriteGroup = this.physics.add.group()
-		const spriteStaticGroup = this.physics.add.staticGroup()
+		// const spriteStaticGroup = this.physics.add.staticGroup()
 
-		this.physics.add.collider(spriteGroup, spriteStaticGroup)
-		this.physics.add.collider(spriteGroup, spriteGroup)
+		// this.physics.add.collider(spriteGroup, spriteStaticGroup)
+		// this.physics.add.collider(spriteGroup, spriteGroup)
 		// create MatterSpriteSystem
 		this.pipeline = pipe(
 			createArcadeSpriteSystem(spriteGroup, TextureKeys),
-			createArcadeSpriteStaticSystem(spriteStaticGroup, TextureKeys),
+			// createArcadeSpriteStaticSystem(spriteStaticGroup, TextureKeys),
 			createPlayerSystem(this.cursors),
 			createCPUSystem(this),
 			createMovementSystem()
