@@ -12,8 +12,10 @@ import Input, { Direction } from '../ecs-comps/Input'
 export default function createPlayerSystem(cursors: Phaser.Types.Input.Keyboard.CursorKeys) {
 	const playerQuery = defineQuery([Player, Velocity, Rotation, Input])
 
+	
 	return defineSystem((world) => {
 		const entities = playerQuery(world)
+		
 		
 		for (let i = 0; i < entities.length; ++i)
 		{

@@ -12,6 +12,8 @@ import Alpha from '../ecs-comps/Alpha'
 export default function createMovementSystem() {
 	const movementQuery = defineQuery([Position, Velocity, Input, Rotation, Alpha])
 
+	console.log("MOVEMENT");
+	
 	return defineSystem((world) => {
 		const entities = movementQuery(world)
 		
@@ -32,7 +34,7 @@ export default function createMovementSystem() {
 				case Direction.Left:
 					Velocity.x[id] = -speed
 					Velocity.y[id] = 0
-					Rotation.angle[id] = 180
+					Rotation.angle[id] = 180	
 					break
 
 				case Direction.Right:

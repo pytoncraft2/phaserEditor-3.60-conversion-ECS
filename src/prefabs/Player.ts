@@ -4,12 +4,10 @@ import { addComponent, addEntity, IWorld } from "bitecs";
 import { Velocity } from "../ecs-comps/Velocity";
 import { Position } from "../ecs-comps/Position";
 import { Rotation } from "../ecs-comps/Rotation";
-// import { MatterSprite } from "../ecs-comps/MatterSprite";
 import { ArcadeSprite } from "../ecs-comps/ArcadeSprite";
 import { Input } from "../ecs-comps/Input";
 import { Player } from "../ecs-comps/Player";
 import { Textures } from "../types/texture";
-// import { Scale } from "../ecs-comps/Scale";
 import * as Phaser from "phaser";
 
 /* START OF COMPILED CODE */
