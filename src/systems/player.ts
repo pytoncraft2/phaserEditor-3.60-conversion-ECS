@@ -4,10 +4,10 @@ import {
 	defineQuery,
 } from 'bitecs'
 
-import Velocity from '../components/Velocity'
-import Rotation from '../components/Rotation'
-import Player from '../components/Player'
-import Input, { Direction } from '../components/Input'
+import Velocity from '../ecs-comps/Velocity'
+import Rotation from '../ecs-comps/Rotation'
+import Player from '../ecs-comps/Player'
+import Input, { Direction } from '../ecs-comps/Input'
 
 export default function createPlayerSystem(cursors: Phaser.Types.Input.Keyboard.CursorKeys) {
 	const playerQuery = defineQuery([Player, Velocity, Rotation, Input])

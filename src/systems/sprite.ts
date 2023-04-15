@@ -6,9 +6,9 @@ import {
 	exitQuery
 } from 'bitecs'
 
-import { Position } from '../ecs-comps/Position'
-import { Rotation } from '../ecs-comps/Rotation'
-import { Velocity } from '../ecs-comps/Velocity'
+import Position from '../ecs-comps/Position'
+import Rotation from '../ecs-comps/Rotation'
+import Velocity from '../ecs-comps/Velocity'
 import { ArcadeSprite, ArcadeSpriteStatic } from '../ecs-comps/ArcadeSprite'
 import Alpha from '../ecs-comps/Alpha'
 

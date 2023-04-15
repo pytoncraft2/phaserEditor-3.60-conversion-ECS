@@ -1,24 +1,10 @@
-
 // You can write more code here
-// import { createWorld, IWorld, pipe } from "bitecs";
-// import { createMatterPhysicsSystem, createMatterSpriteSystem, createMatterStaticSpriteSystem } from "../../systems/Matter";
-// import { createPlayerSystem } from "../../systems/PlayerSystem";
-// import { createSteeringSystem } from "../../systems/SteerSystem";
-// import { TextureKeys } from "../../types/texture";
-// import * as Phaser from "phaser";
-// import Player from "../../prefabs/Player";
-// import Bullet from "../../prefabs/Bullet";
-
-
-
-
-
 import * as Phaser from 'phaser'
 import {
 	createWorld,
 	addEntity,
 	addComponent,
-	pipe,
+	pipe
 } from 'bitecs'
 
 import type {
@@ -26,12 +12,14 @@ import type {
 	System
 } from 'bitecs'
 
-import { Position } from '../../ecs-comps/Position'
-import { Velocity } from '../../ecs-comps/Velocity'
-import { Rotation } from '../../ecs-comps/Rotation'
-import { Player } from '../../ecs-comps/Player'
+import Player from "../../prefabs/Player"
+import Bullet from "../../prefabs/Bullet"
+import Position from '../../ecs-comps/Position'
+import Velocity from '../../ecs-comps/Velocity'
+import Rotation from '../../ecs-comps/Rotation'
+// import Player from '../../ecs-comps/Player'
 import CPU from '../../ecs-comps/CPU'
-import { Input } from '../../ecs-comps/Input'
+import Input from '../../ecs-comps/Input'
 
 import createMovementSystem from '../../systems/movement'
 import createPlayerSystem from '../../systems/player'
@@ -39,6 +27,21 @@ import createCPUSystem from '../../systems/cpu'
 import { createArcadeSpriteStaticSystem, createArcadeSpriteSystem } from '../../systems/sprite'
 import { ArcadeSprite, ArcadeSpriteStatic } from '../../ecs-comps/ArcadeSprite'
 import Alpha from '../../ecs-comps/Alpha'
+
+enum Textures
+{
+	TankBlue = 0,
+	TankGreen = 1,
+	TankRed = 2,
+	Toile = 3
+}
+
+const TextureKeys = [
+	'tank-blue',
+	'tank-green',
+	'tank-red',
+	'toile'
+]
 /* START OF COMPILED CODE */
 
 export default class Level extends Phaser.Scene {

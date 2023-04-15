@@ -5,8 +5,8 @@ import {
 } from 'bitecs'
 
 import CPU from '../ecs-comps/CPU'
-import { Velocity } from '../ecs-comps/Velocity'
-import { Rotation } from '../ecs-comps/Rotation'
+import Velocity from '../ecs-comps/Velocity'
+import Rotation from '../ecs-comps/Rotation'
 import Input, { Direction} from '../ecs-comps/Input'
 
 export default function createCPUSystem(scene: Phaser.Scene) {

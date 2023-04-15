@@ -3,11 +3,11 @@ import {
 	defineQuery,
 } from 'bitecs'
 
-import Position from '../components/Position'
-import Velocity from '../components/Velocity'
-import Rotation from '../components/Rotation'
-import Input, { Direction } from '../components/Input'
-import Alpha from '../components/Alpha'
+import Position from '../ecs-comps/Position'
+import Velocity from '../ecs-comps/Velocity'
+import Rotation from '../ecs-comps/Rotation'
+import Input, { Direction } from '../ecs-comps/Input'
+import Alpha from '../ecs-comps/Alpha'
 
 export default function createMovementSystem() {
 	const movementQuery = defineQuery([Position, Velocity, Input, Rotation, Alpha])
