@@ -1,13 +1,13 @@
+
 // You can write more code here
 import { createWorld, IWorld, pipe } from "bitecs";
-import { createMatterPhysicsSyncSystem, createMatterPhysicsSystem, createMatterSpriteSystem, createMatterStaticSpriteSystem } from "../systems/Matter";
-import { createPlayerSystem } from "../systems/PlayerSystem";
-import { createSteeringSystem } from "../systems/SteerSystem";
-import { TextureKeys } from "../types/texture";
+import { createMatterPhysicsSyncSystem, createMatterPhysicsSystem, createMatterSpriteSystem, createMatterStaticSpriteSystem } from "../../systems/Matter";
+import { createPlayerSystem } from "../../systems/PlayerSystem";
+import { createSteeringSystem } from "../../systems/SteerSystem";
+import { TextureKeys } from "../../types/texture";
 import * as Phaser from "phaser";
-import Player from "../prefabs/Player";
-import Bullet from "../prefabs/Bullet";
-
+import Player from "../../prefabs/Player";
+import Bullet from "../../prefabs/Bullet";
 /* START OF COMPILED CODE */
 
 export default class Level extends Phaser.Scene {
@@ -16,7 +16,6 @@ export default class Level extends Phaser.Scene {
 		super("Level");
 
 		/* START-USER-CTR-CODE */
-		// Write your code here.
 		this.world = createWorld()
 		/* END-USER-CTR-CODE */
 	}
@@ -45,6 +44,8 @@ export default class Level extends Phaser.Scene {
 	private player!: Player;
 
 	/* START-USER-CODE */
+
+	// Write your code here
 	init()
 	{
 		this.cursors = this.input.keyboard.createCursorKeys()
