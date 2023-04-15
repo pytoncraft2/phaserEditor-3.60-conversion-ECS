@@ -6,7 +6,9 @@
         "preloadPackFiles": [],
         "createMethodName": "editorCreate",
         "sceneKey": "Level",
-        "compilerOutputLanguage": "TYPE_SCRIPT"
+        "compilerOutputLanguage": "TYPE_SCRIPT",
+        "borderWidth": 1920,
+        "borderHeight": 1080
     },
     "displayList": [
         {
@@ -49,6 +51,21 @@
             "y": 186,
             "nestedPrefabs": [],
             "list": []
+        },
+        {
+            "type": "Rectangle",
+            "id": "3e3ede41-eff8-45d0-895e-28262ab2766c",
+            "label": "platforme",
+            "scope": "PUBLIC",
+            "components": [],
+            "x": 459,
+            "y": 541,
+            "scaleX": 3.7680520591373106,
+            "scaleY": 0.21455732556873675,
+            "isFilled": true,
+            "fillColor": "#5d0404",
+            "width": 128,
+            "height": 128
         }
     ],
     "plainObjects": [],

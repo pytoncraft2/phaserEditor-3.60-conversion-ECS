@@ -36,12 +36,21 @@ export default class Level extends Phaser.Scene {
 		const bullet = new Bullet(this, 496, 186);
 		this.add.existing(bullet);
 
+		// platforme
+		const platforme = this.add.rectangle(459, 541, 128, 128);
+		platforme.scaleX = 3.7680520591373106;
+		platforme.scaleY = 0.21455732556873675;
+		platforme.isFilled = true;
+		platforme.fillColor = 6095876;
+
 		this.player = player;
+		this.platforme = platforme;
 
 		this.events.emit("scene-awake");
 	}
 
 	private player!: Player;
+	public platforme!: Phaser.GameObjects.Rectangle;
 
 	/* START-USER-CODE */
 
@@ -64,6 +73,7 @@ export default class Level extends Phaser.Scene {
 		this.events.once(Phaser.Scenes.Events.SHUTDOWN, () => {
 			this.matter.world.off(Phaser.Physics.Matter.Events.AFTER_UPDATE, onAfterUpdate)
 		})
+
 	}
 
 	private cursors!: Phaser.Types.Input.Keyboard.CursorKeys
@@ -76,6 +86,7 @@ export default class Level extends Phaser.Scene {
 	create() {
 
 		this.editorCreate();
+		// this.matter.add.gameObject(this.platforme, {isStatic: true});
 
 		this.initEnities()
 

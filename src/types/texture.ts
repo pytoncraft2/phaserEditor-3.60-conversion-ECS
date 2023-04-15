@@ -14,5 +14,6 @@ export const TextureKeys = [
 	'tank_red',
 	'tree_large',
 	'tree_small',
-	"guapen"
+	"guapen",
+	"test"
 ]
